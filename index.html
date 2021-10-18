@@ -12,148 +12,162 @@
   </head>
 
   <body>
-    <!-- HEADER -->
-    <header class="wrapper">
+    <div id="app">
 
+      <!-- HEADER -->
+      <header class="wrapper">
         <h1 class="logo">クリ★スタ</h1>
-        
         <nav>
           <ul>
             <li>
-              <a href="#">About</a>
+              <a href="#about">About</a>
             </li>
             <li>
-              <a href="#">Service</a>
+              <a href="#service">Service</a>
             </li>
             <li>
-              <a href="#">News</a>
+              <a href="#news">News</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
 
-        <span class="menu-icon">
-          <i class="fas fa-bars fa-2x"></i>
-        </span>
-      
-    </header>
+        <button class="hamburger__btn" @click="ActiveBtn=!ActiveBtn">
+          <span class="line line_01" :class="{'btn_line01':ActiveBtn}"></span>
+          <span class="line line_02" :class="{'btn_line02':ActiveBtn}"></span>
+          <span class="line line_03" :class="{'btn_line03':ActiveBtn}"></span>
+        </button>
+        <transition name="hamburger__menu">
+          <div class="hamburger__menu" v-show="ActiveBtn">
+              <ul>
+                <li><a href="#about" @click="ActiveBtn=!ActiveBtn">About</a></li>
+                <li><a href="#service" @click="ActiveBtn=!ActiveBtn">Service</a></li>
+                <li><a href="#news" @click="ActiveBtn=!ActiveBtn">News</a></li>
+                <li><a href="#contact" @click="ActiveBtn=!ActiveBtn">Contact</a></li>
+              </ul>
+          </div>
+        </transition>
+      </header>
 
-    <!-- TOP -->
-    <div class="top">
-      <h1>Cresta Design.</h1>
-    </div>
-
-    <!-- CONTENT -->
-    <div class="main wrapper">
-
-      <!-- ABOUT -->
-      <div class="about">
-        <h2>About</h2>
-        <h3>
-          ミニマルで <br>
-          洗練されたデザインを。
-        </h3>
-        <p>
-          近年、ミニマルなデザインが流行しています。
-          そこで弊社では、クライアント企業様新規サービス等の課題に対してミニマルで洗練されたデザインを実現させることで解決のサポートを致します。
-          もちろん全てのサービスにおいてミニマルなデザインが課題解決になるわけではないので、課題や今後のサービスの展開等しっかりとヒアリングを行なった上でご提案させて頂きます。
-        </p>
+      <!-- TOP -->
+      <div class="top">
+        <h1>Cresta Design.</h1>
       </div>
-  
-      <!-- SERVICE -->
-      <div class="service">
-        <h2>Service</h2>
 
-        <div class="content">
-          
-          <div class="content-text text-order">
-            <h3>
-              リリース時のサポートで <br>
-              サービスのブランディングを
-            </h3>
-            <p>
-              弊社では、リリース時もサポートさせて頂きます。
-              プレスリリース用のサイトや動画制作を通して、サービスのブランディングを行わせて頂きます。
-            </p>
-          </div>
-
-          <img class="img-order" src="./images/service-image@2x.jpg" alt="一眼レフカメラ">
-
+      <!-- CONTENT -->
+      <div class="main wrapper">
+        <!-- ABOUT -->
+        <div class="about" id="about">
+          <h2>About</h2>
+          <h3>
+            ミニマルで <br>
+            洗練されたデザインを。
+          </h3>
+          <p>
+            近年、ミニマルなデザインが流行しています。
+            そこで弊社では、クライアント企業様新規サービス等の課題に対してミニマルで洗練されたデザインを実現させることで解決のサポートを致します。
+            もちろん全てのサービスにおいてミニマルなデザインが課題解決になるわけではないので、課題や今後のサービスの展開等しっかりとヒアリングを行なった上でご提案させて頂きます。
+          </p>
         </div>
-
-        <div class="content">
-          <div class="content-text">
-            <h3>
-              リリース後のサポートで <br>
-              効果を最大化させる
-            </h3>
-            <p>
-              弊社では、リリース後もサポートさせて頂きます。
-              サービスはリリース後に様々な課題にぶつかります。
-              そこでクライアント様と一緒に改善を行うことで、デザインの効果を最大化させます。
-            </p>
-          </div>
-  
-          <img src="./images/service-image02@2x.jpg" alt="iPhone">
-        
-        </div>
-  
-      </div>
-  
-      <!-- NEWS -->
-      <div class="news">
-        <h2>News</h2>
-
-        <div class="news-list">
-          <div class="news-topic">
-            <img src="./images/card-image1@2x.jpg" alt="ガジェット">
-            <p>新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
-          </div>
     
-          <div class="news-topic">
-            <img src="./images/card-image2@2x.jpg" alt="iPhone">
-            <p>新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+        <!-- SERVICE -->
+        <div class="service" id="service">
+          <h2>Service</h2>
+          <div class="content">
+            <div class="content-text text-order">
+              <h3>
+                リリース時のサポートで <br>
+                サービスのブランディングを
+              </h3>
+              <p>
+                弊社では、リリース時もサポートさせて頂きます。
+                プレスリリース用のサイトや動画制作を通して、サービスのブランディングを行わせて頂きます。
+              </p>
+            </div>
+            <img class="img-order" src="./images/service-image@2x.jpg" alt="一眼レフカメラ">
           </div>
-    
-          <div class="news-topic">
-            <img src="./images/card-image3@2x.jpg" alt="Macbook">
-            <p>新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+          <div class="content">
+            <div class="content-text">
+              <h3>
+                リリース後のサポートで <br>
+                効果を最大化させる
+              </h3>
+              <p>
+                弊社では、リリース後もサポートさせて頂きます。
+                サービスはリリース後に様々な課題にぶつかります。
+                そこでクライアント様と一緒に改善を行うことで、デザインの効果を最大化させます。
+              </p>
+            </div>
+            <img src="./images/service-image02@2x.jpg" alt="iPhone">
           </div>
         </div>
-        
-      </div>
-
-      <!-- CONTACT -->
-      <div class="contact">
-        <h2>お問い合わせ</h2>
-
-        <form action="#">
-          <label for="name">担当者名</label>
-          <input type="text" id="name">
-
-          <label for="tel">電話番号</label>
-          <input type="tel" id="tel">
-          
-          <label for="email">メールアドレス</label>
-          <input type="email" id="email">
-
-          <label for="content">お問い合わせ内容</label>
-          <textarea id="content"></textarea>
-
-          <div class="btn">
-            <input type="submit" value="送信">
+    
+        <!-- NEWS -->
+        <div class="news" id="news">
+          <h2>News</h2>
+          <div class="news-list">
+            <div class="news-topic">
+              <img src="./images/card-image1@2x.jpg" alt="ガジェット">
+              <p>新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+            </div>
+            <div class="news-topic">
+              <img src="./images/card-image2@2x.jpg" alt="iPhone">
+              <p>新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+            </div>
+            <div class="news-topic">
+              <img src="./images/card-image3@2x.jpg" alt="Macbook">
+              <p>新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+            </div>
           </div>
-        </form>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact" id="contact">
+          <h2>お問い合わせ</h2>
+          <form action="#">
+            <label for="name">担当者名</label>
+            <input type="text" id="name">
+            <label for="tel">電話番号</label>
+            <input type="tel" id="tel">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email">
+            <label for="content">お問い合わせ内容</label>
+            <textarea id="content"></textarea>
+            <div class="btn">
+              <input type="submit" value="送信">
+            </div>
+          </form>
+        </div>
       </div>
-  
-    </div>
 
-    <!-- FOOTER -->
-    <footer>
-      <p><small>&copy; crest.design all rights reserved</small></p>
-    </footer>
+      <!-- FOOTER -->
+      <footer>
+        <p><small>&copy; crest.design all rights reserved</small></p>
+        <p>{{ msg }}</p>
+      </footer>
 
+    </div><!-- /#app -->
+
+    <!-- Vue.jsをCDN経由で読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          ActiveBtn: false,
+          msg: "Welcome"
+        },
+        methods: {
+          sayHello(){
+            this.msg = "Hello!"
+          }
+        },
+        mounted(){
+          //表示後にやりたいことはここに書ける
+        }
+      })
+    </script>
   </body>
 </html>
